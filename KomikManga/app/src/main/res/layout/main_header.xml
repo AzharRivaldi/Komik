@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+    <xyz.sahildave.arclayout.ArcLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:arc_cropCurve="cropConvex"
+        app:arc_height="48dp"
+        app:arc_position="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical" />
+
+    </xyz.sahildave.arclayout.ArcLayout>
+
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGreeting">
+
+        <com.github.islamkhsh.CardSliderViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:auto_slide_time="3"
+            app:cardSlider_baseShadow="5dp"
+            app:cardSlider_indicator="@id/indicator"
+            app:cardSlider_minShadow="5dp"
+            app:cardSlider_otherPagesWidth="24dp"
+            app:cardSlider_pageMargin="12dp"
+            app:cardSlider_smallScaleFactor="0.8" />
+
+        <com.github.islamkhsh.CardSliderIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewPager"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:defaultIndicator="@drawable/default_dot"
+            app:indicatorsToShow="8"
+            app:selectedIndicator="@drawable/selected_dot" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
